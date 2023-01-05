@@ -10,7 +10,7 @@ from import_export.admin import ImportExportModelAdmin
 class CategoriaResource(resources.ModelResource):
     class Meta:
         model = Categoria
-
+        
 class CategoriaAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     search_fields = ['nombre']
     list_display = ('nombre', 'estado', 'fecha_creacion')
