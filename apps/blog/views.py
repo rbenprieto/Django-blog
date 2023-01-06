@@ -9,6 +9,9 @@ def home(request):
     post = Post.objects.filter(estado=True)
     return render(request, 'index.html', {'posts': post})
 
+def detallePost(request, slug):
+    post = Post.objects.filter(slug=slug).first()
+    return render(request, 'post.html', {'detalle_post': post})
 
 def generales(request):
     post = Post.objects.filter(estado=True, categoria= Categoria.objects.filter(nombre='Generales').first())
@@ -21,3 +24,7 @@ def programacion(request):
 def contacto(request):
     post = Post.objects.filter(estado=True, categoria= Categoria.objects.filter(nombre='Contacto').first())
     return render(request, 'contacto.html', {'posts': post})
+
+def careers(request):
+    post = Post.objects.filter(estado=True, categoria=Categoria.objects.filter(nombre='Careers').first())
+    return render(request, 'careers.html', {'posts':post})

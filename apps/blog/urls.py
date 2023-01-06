@@ -3,7 +3,9 @@ from .views import (
     home,
     generales,
     programacion,
-    contacto
+    contacto,
+    detallePost,
+    careers
 )
 
 urlpatterns = [
@@ -11,5 +13,7 @@ urlpatterns = [
     path('generales/', generales, name='generales'),
     path('programacion/', programacion, name='programacion'),
     path('contacto/', contacto, name='contacto'),
+    path('careers/', careers, name='careers'),
+    path('<slug:slug>/', detallePost, name='detalle-post'),
 
 ]
