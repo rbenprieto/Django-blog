@@ -39,7 +39,7 @@ class Post(models.Model):
     titulo = models.CharField(max_length=90, verbose_name='Titulo')
     slug = models.CharField(max_length=100, verbose_name='Slug')
     descripcion = models.CharField(max_length=110, verbose_name='Descripción')
-    contenido = RichTextField
+    contenido = RichTextField()
     imagen = models.URLField(max_length=255, verbose_name='Imagen')
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE, verbose_name='Autor')
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)

@@ -10,7 +10,7 @@ from import_export.admin import ImportExportModelAdmin
 class CategoriaResource(resources.ModelResource):
     class Meta:
         model = Categoria
-        
+
 class CategoriaAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     search_fields = ['nombre']
     list_display = ('nombre', 'estado', 'fecha_creacion')
@@ -26,6 +26,11 @@ class AutorAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display_links = list_display
     resource_class = AutorResource
 
+class PostAdmin(admin.ModelAdmin):
+    search_fields = ['titulo', 'contenido', 'descripcion']
+    list_display = ('titulo', 'autor', 'categoria')
+    list_display_links = list_display
+
 admin.site.register(Categoria, CategoriaAdmin)
 admin.site.register(Autor, AutorAdmin)
-admin.site.register(Post)
+admin.site.register(Post, PostAdmin)
