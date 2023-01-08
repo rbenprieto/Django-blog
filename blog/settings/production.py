@@ -11,11 +11,11 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost:8000', 'localhost','https://djangoblogr
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blog',
-        'USER': 'postgres',
-        'PASSWORD': 'roma-314',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.environ.get('BLOG_DB_NAME'),
+        'USER': os.environ.get('BLOG_DB_USER'),
+        'PASSWORD': os.environ.get('BLOG_DB_PASSWORD'),
+        'HOST': os.environ.get('BLOG_DB_HOST'),
+        'PORT': os.environ.get('BLOG_DB_PORT'),
         'ATOMIC_REQUESTS': True
     }
 }
