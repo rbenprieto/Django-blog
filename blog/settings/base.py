@@ -35,7 +35,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     #THIRD
-    'jazzmin',
+    #'jazzmin',
 
     #NATIVE
     'django.contrib.admin',
